@@ -1,0 +1,24 @@
+﻿@model PostViewModel
+@{
+    ViewBag.Title = $"{Model.Article.Title}";
+    ViewData["SiteMetadata"] = Model.Metadata;
+    ViewData["Author"] = Model.Author;
+}
+@if (Model != null)
+{
+    <div>
+        <div class="article-single">
+            <div class="article-single__inner">
+                <h1 class="article-single__title">@Html.DisplayFor(model => Model.Article.Title)</h1>
+                <div class="article-single__body">
+                    @Html.Raw(Model.Article.Content)
+                </div>
+            </div>
+            <div class="article-single__date">
+                <em>
+                    Published @Html.DisplayFor(model => Model.Article.PublishDate)
+                </em>
+            </div>
+        </div>
+    </div>
+}

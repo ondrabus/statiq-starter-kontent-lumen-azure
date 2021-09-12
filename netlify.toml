@@ -1,0 +1,3 @@
+[build]
+  publish = "./output"
+  command = "dotnet run --configuration Release"
